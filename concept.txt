@@ -1,0 +1,105 @@
+#######################
+######## Table ########
+#######################
+
+
+#######################
+######### Col #########
+#######################
+
+?============?
+| Title:type |
+|============|
+| value 1    |
+|============|
+| value 2    |
+|============|
+| value 3    |
+?============?
+
+#######################
+######### Row #########
+#######################
+
+2 Types of rows
+Row 0 Title Row
+
+?===========================?
+| Title1:Type | Title2:Type |
+?===========================?
+
+Row 1.. Value Row
+
+?=============================?
+| Value 1 | Value 2 | Value 3 |
+?=============================?
+
+Structure
+---------
+
+###################################################################################################################
+#														  #
+#                 ?===========================================================================?                   #
+#                 |			Input box for query				      |			  #
+#                 |									      |			  #
+#		  |									      |			  #
+#		  ?===========================================================================?			  #
+#														  #
+#														  #
+#														  #
+#	?===============================================================================================?	  #
+#	|	Title1:Type	|	Title2:Type	|	Title3:Type	|	Title4:Type	|	  #
+#	|===============================================================================================|	  #	  #
+#	|	Value1  	|	Value2 		|	Value3		|	Value4		|	  #
+#	|===============================================================================================|	  #
+#	|		Value1  	|	Value2 		|	Value3		|	Value4		|	  #
+#	|===============================================================================================|	  #
+#	|	Value1  	|	Value2 		|	Value3		|	Value4		|	  #
+#	|===============================================================================================|	  #
+#	|	Value1  	|	Value2 		|	Value3		|	Value4		|	  #
+#	|===============================================================================================|	  #
+#	|	Value1  	|	Value2 		|	Value3		|	Value4		|	  #
+#	|===============================================================================================|	  #
+#	|	Value1  	|	Value2 		|	Value3		|	Value4		|	  #
+#	|===============================================================================================|	  #
+#	|	Value1  	|	Value2 		|	Value3		|	Value4		|	  #
+#	|===============================================================================================|	  #
+#														  #
+###################################################################################################################
+
+
+Taskbar contains File:
+	subsction:	open, save
+	open:		to load a database
+	save:		save changes of database
+
+SQL injection:
+	Create Table:
+		touch <name>.db
+		display the new createt table
+		
+		- Parameters:
+			nessessary:
+				name,
+
+			optional:
+				title:type (Type optional standard string)
+				value
+				
+				value.col.size() == title.row.size()
+
+		Syntax:
+			create table <name>(Title1:type Value1 Valu2, Title2:type Value1)
+			if no value provided its going to be set to NULL
+
+			If in title no value is set even when reading a database(table) a standard value 
+			of string is going to be provided
+
+	Select <name> <options>
+		name: can be name of table or title, value
+
+	Select <name> from <supName>
+		from - keyword tells the parser that the next parameter information of title or table name
+		
+
+

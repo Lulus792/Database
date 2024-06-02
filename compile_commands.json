@@ -1,0 +1,47 @@
+[
+{
+  "directory": "/home/angelus/Documents/cpp/Database/build",
+  "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/Database_autogen/mocs_compilation.cpp.o -c /home/angelus/Documents/cpp/Database/build/Database_autogen/mocs_compilation.cpp",
+  "file": "/home/angelus/Documents/cpp/Database/build/Database_autogen/mocs_compilation.cpp"
+},
+{
+  "directory": "/home/angelus/Documents/cpp/Database/build",
+  "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/code/main.cpp.o -c /home/angelus/Documents/cpp/Database/code/main.cpp",
+  "file": "/home/angelus/Documents/cpp/Database/code/main.cpp"
+},
+{
+  "directory": "/home/angelus/Documents/cpp/Database/build",
+  "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/code/window/window.cpp.o -c /home/angelus/Documents/cpp/Database/code/window/window.cpp",
+  "file": "/home/angelus/Documents/cpp/Database/code/window/window.cpp"
+},
+{
+  "directory": "/home/angelus/Documents/cpp/Database/build",
+  "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/code/menu/menu.cpp.o -c /home/angelus/Documents/cpp/Database/code/menu/menu.cpp",
+  "file": "/home/angelus/Documents/cpp/Database/code/menu/menu.cpp"
+},
+{
+  "directory": "/home/angelus/Documents/cpp/Database/build",
+  "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/code/file/file_handling.cpp.o -c /home/angelus/Documents/cpp/Database/code/file/file_handling.cpp",
+  "file": "/home/angelus/Documents/cpp/Database/code/file/file_handling.cpp"
+},
+{
+  "directory": "/home/angelus/Documents/cpp/Database/build",
+  "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/code/handleSql/handleSql.cpp.o -c /home/angelus/Documents/cpp/Database/code/handleSql/handleSql.cpp",
+  "file": "/home/angelus/Documents/cpp/Database/code/handleSql/handleSql.cpp"
+},
+{
+  "directory": "/home/angelus/Documents/cpp/Database/build",
+  "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/code/handleSql/lexer/lexer.cpp.o -c /home/angelus/Documents/cpp/Database/code/handleSql/lexer/lexer.cpp",
+  "file": "/home/angelus/Documents/cpp/Database/code/handleSql/lexer/lexer.cpp"
+},
+{
+  "directory": "/home/angelus/Documents/cpp/Database/build",
+  "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/code/handleSql/parser/parser.cpp.o -c /home/angelus/Documents/cpp/Database/code/handleSql/parser/parser.cpp",
+  "file": "/home/angelus/Documents/cpp/Database/code/handleSql/parser/parser.cpp"
+},
+{
+  "directory": "/home/angelus/Documents/cpp/Database/build",
+  "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/code/error/error.cpp.o -c /home/angelus/Documents/cpp/Database/code/error/error.cpp",
+  "file": "/home/angelus/Documents/cpp/Database/code/error/error.cpp"
+}
+]
