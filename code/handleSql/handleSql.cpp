@@ -5,7 +5,6 @@
 #include "sql.h"
 
 #include <fstream>
-#include <iostream>
 
 bool findValueInVec(std::vector<std::string> *t_vec, std::string t_value) {
   for (std::string &val : *t_vec) {

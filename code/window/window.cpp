@@ -1,15 +1,44 @@
 #include "window.h"
 #include "../file/file_handling.h"
 #include "../handleSql/handleSql.h"
+#include "../../../si_language/code/stringFunction.h"
 
 #include <QGuiApplication>
 #include <QScreen>
 
-Window::Window(int *argc, char **argv) {
+void getFilename(std::string *tmp) {
+  while (si::find(tmp, '/') > 1) {
+    *tmp = tmp->substr(tmp->find_first_of('/') + 1);
+  } 
+}
+
+void getPathAndTables(Window *window, int *argc, char **argv) {
+  std::string path0{ argv[1] };
+  window->m_path.push_back(path0.substr(0, 
+                           path0.substr(0, path0.find_last_of('/'))
+                                        .find_last_of('/')) + "/"); 
 
   for (size_t i{ 1 }; i < (size_t)(*argc); i++) {
-    this->m_databaseName.push_back(argv[i]);
+    std::string tmp{ argv[i] };
+    std::string tmpPath{ tmp.substr(0, tmp.substr(0, tmp.find_last_of('/'))
+                                        .find_last_of('/')) + "/" };
+    bool pathAlreadyExists{ false };
+    for (std::string &path : window->m_path) {
+      if (path != tmpPath) {
+        pathAlreadyExists = true;
+      }
+    }
+    if (pathAlreadyExists) {
+        window->m_path.push_back(tmp);
+    }
+    getFilename(&tmp);
+    window->m_databaseName.push_back(tmp);
   }
+}
+
+Window::Window(int *argc, char **argv) {
+
+  getPathAndTables(this, argc, argv);
 
   this->m_size.width = QGuiApplication::primaryScreen()->geometry().width();
   this->m_size.height = QGuiApplication::primaryScreen()->geometry().height();

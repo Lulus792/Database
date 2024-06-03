@@ -24,10 +24,13 @@ private:
   Menu m_menu;
   WindowSize m_size;
   std::vector<std::string> m_databaseName;
+  std::vector<std::string> m_path;
 
 public:
   Window(int *argc, char **argv);
   void resizeEvent(QResizeEvent *event) override;
+
+  friend void getPathAndTables(Window *window, int *argc, char **argv);
 
 } Window;
 

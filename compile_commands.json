@@ -43,5 +43,10 @@
   "directory": "/home/angelus/Documents/cpp/Database/build",
   "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/code/error/error.cpp.o -c /home/angelus/Documents/cpp/Database/code/error/error.cpp",
   "file": "/home/angelus/Documents/cpp/Database/code/error/error.cpp"
+},
+{
+  "directory": "/home/angelus/Documents/cpp/Database/build",
+  "command": "/usr/bin/g++-13 -DQT_CORE_LIB -DQT_GUI_LIB -DQT_NO_DEBUG -DQT_WIDGETS_LIB -I/home/angelus/Documents/cpp/Database/build/Database_autogen/include -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtCore -isystem /home/angelus/Qt/6.6.3/gcc_64/include -isystem /home/angelus/Qt/6.6.3/gcc_64/mkspecs/linux-g++ -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtWidgets -isystem /home/angelus/Qt/6.6.3/gcc_64/include/QtGui -Wall -Wextra -Werror -Wpedantic -pedantic -pedantic-errors -fPIC -std=gnu++20 -o CMakeFiles/Database.dir/home/angelus/Documents/cpp/si_language/code/stringFunction.cc.o -c /home/angelus/Documents/cpp/si_language/code/stringFunction.cc",
+  "file": "/home/angelus/Documents/cpp/si_language/code/stringFunction.cc"
 }
 ]

@@ -1,0 +1,57 @@
+#!/bin/bash
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )/"
+
+if [[ $1 == "-c" ]]; then
+  cmake ${SCRIPT_DIR} -B ${SCRIPT_DIR}build/
+fi
+
+ln -f ${SCRIPT_DIR}build/compile_commands.json ${SCRIPT_DIR}
+cmake --build ${SCRIPT_DIR}build/
+
+dir=$SCRIPT_DIR*
+
+if [[ "$1" != "" && -d "$1" ]]; then
+  declare -a dir_array
+  for folder in $@; do
+    for file in $folder*;do
+      if [[ -f "$file" && "${file##*.}" == "db" ]]; then
+        dir_array=("${dir_array[@]}" "$PWD/$file")
+      fi
+    done
+  done
+  ${SCRIPT_DIR}build/Database ${dir_array[@]}
+else
+  declare -a dir_array
+  for f in $dir; do
+    if [[ "${f##*/}" != "try" ]]; then
+      if [[ -d "$f" ]]; then
+        dir_array=("${dir_array[@]}" "$f")
+      fi
+    fi
+    
+  done
+
+  declare -a filename
+  for folder in ${dir_array[@]}; do
+    for file in $folder/*; do
+      if [[ "${file##*.}" == "db" ]]; then
+        if [[ "${#filename[@]}" -eq 0 ]]; then
+          filename=("$file")
+        else
+          declare var=0
+          for i in ${filename[@]}; do
+            if [[ "$i" != "$file" ]]; then
+              var=1
+            fi
+          done
+          if [[ $var -eq 1 ]]; then
+            filename=("${filename[@]}" "$file")
+          fi
+        fi
+      fi
+    done
+  done
+  ${SCRIPT_DIR}build/Database ${filename[@]}
+fi
+
+

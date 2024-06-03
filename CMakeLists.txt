@@ -30,6 +30,7 @@ set(SOURCES
  code/handleSql/lexer/lexer.cpp
  code/handleSql/parser/parser.cpp
  code/error/error.cpp
+ ../si_language/code/stringFunction.cc
 )
 
 set (HEADERS
@@ -42,6 +43,7 @@ set (HEADERS
   code/handleSql/parser/parser.h
   code/handleSql/sql.h
   code/error/error.h
+  ../si_language/code/stringFunction.h
 )
 
 qt_add_executable(Database ${SOURCES} ${HEADERS})
