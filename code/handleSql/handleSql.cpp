@@ -5,6 +5,7 @@
 #include "sql.h"
 
 #include <fstream>
+#include <iostream>
 
 bool findValueInVec(std::vector<std::string> *t_vec, std::string t_value) {
   for (std::string &val : *t_vec) {
@@ -13,20 +14,12 @@ bool findValueInVec(std::vector<std::string> *t_vec, std::string t_value) {
   return false;
 }
 
-bool createTableFile(std::ofstream *file, CreateTable *table) {
-  int count{ (int)table->title.size() - 1 };
-  for (std::string &title : table->title) {
-    if (count) {
-      *file << title << ", ";
-      count--;
-    }
-    else {
-      *file << title;
-      *file << "\n";
-      count = (int)table->title.size() - 1;
-    }
-  }
-  for (std::vector<std::string> &valVec : table->value) {
+bool createTableFile(std::ofstream *file, 
+                     std::vector<std::vector<std::string>> *table) {
+
+  int count{ (int)(*table)[0].size() - 1 };
+
+  for (std::vector<std::string> &valVec : *table) {
     for (std::string &val : valVec) {
       if (count) {
         *file << val << ", ";
@@ -35,10 +28,9 @@ bool createTableFile(std::ofstream *file, CreateTable *table) {
       else {
         *file << val;
         *file << "\n";
-        count = (int)table->title.size() - 1;
+        count = (int)(*table)[0].size() - 1;
       }
     }
-    
   }
 
   return false;
@@ -59,80 +51,75 @@ void createTable(Token *code, std::vector<std::string> *databaseName) {
   else if (code->type[(size - 1)] != CLOSE_PAREN) return;
   else if (code->type[2] != VALUE) return;
   
-  unsigned int rowNum{};
-  unsigned int posInValVec{ 1 };
-  size_t sizeOfRow{};
-  size_t tmpSize{};
-  bool firstValue{ true };
+  // tracks the position of the current row
+  unsigned int rowNum{}; 
+
+  // tracks the position for the value in code->value
+  unsigned int posInValVec{ 1 }; 
+
+  // in the first loop a new vector must be 
+  // created for each row in table.value
+  bool createNewVec{ true };
+
+  // contains the size of the vector wich contains the values
+  // for the table. Nessessary for checking if you try to acces
+  // outside of the vector
   size_t sizeOfValVec{ code->value.size() };
-  CreateTable table{};
+  std::vector<std::vector<std::string>> table{};
 
   for (size_t i{ 4 }; i < (size - 1); i++) {
     if (code->type[i] == OPEN_PAREN || code->type[i] == CLOSE_PAREN) return;
     if (code->type[i] == KOMMA) {
-      if (sizeOfRow < tmpSize) sizeOfRow = tmpSize;
-      firstValue = false, rowNum = 0, tmpSize = 0;
+      createNewVec = false, rowNum = 0;
       continue;
     }
-    if (firstValue) {
-      if (rowNum == 0) {
-        if (posInValVec < sizeOfValVec) {
-          table.title.push_back(code->value[posInValVec].toStdString());
-        }
-        else {
-          table.title.push_back("");
-        }
+    if (createNewVec) {
+      std::vector<std::string> tmp{};
+      if (posInValVec < sizeOfValVec) {
+        tmp.push_back(code->value[posInValVec].toStdString());
       }
       else {
-        std::vector<std::string> tmp{};
-        if (posInValVec < sizeOfValVec) {
-          tmp.push_back(code->value[posInValVec].toStdString());
-        }
-        else {
-          tmp.push_back("");
-        }
-        table.value.push_back(tmp);
+        tmp.push_back(" ");
       }
-      posInValVec++, rowNum++, tmpSize++;
+      table.push_back(tmp);
+      posInValVec++, rowNum++;
     } 
     else {
-      if (rowNum == 0) {
-        if (posInValVec < sizeOfValVec) {
-          table.title.push_back(code->value[posInValVec].toStdString());
+      if (posInValVec < sizeOfValVec) {
+        if (rowNum >= table.size()) {
+          std::vector<std::string> tmp{ code->value[posInValVec].toStdString() };
+          table.push_back(tmp);
         }
         else {
-          table.value[rowNum].push_back("");
+          table[rowNum].push_back(code->value[posInValVec].toStdString());
         }
       }
       else {
-        if (posInValVec < sizeOfValVec) {
-          if ((rowNum + 1) > table.value.size()) {
-            std::vector<std::string> tmp{ code->value[posInValVec].toStdString() };
-            table.value.push_back(tmp);
-          }
-          else {
-            table.value[rowNum].push_back(code->value[posInValVec].toStdString());
-          }
+        if (rowNum >= table.size()) {
+          std::vector<std::string> tmp{ " " };
+          table.push_back(tmp);
         }
         else {
-          if ((rowNum + 1) > table.value.size()) {
-            std::vector<std::string> tmp{ "" };
-            table.value.push_back(tmp);
-          }
-          else {
-            table.value[rowNum].push_back("");
-          }
+          table[rowNum].push_back(" ");
         }
       }
-      posInValVec++, rowNum++, tmpSize++;
+      posInValVec++, rowNum++;
     }
   }
 
-  for (std::vector<std::string> &row : table.value) {
-    size_t tmp{ row.size()};
+  // tracks the maximum size of the rows
+  size_t sizeOfRow{ table[0].size() };
+
+  for (std::vector<std::string> &row : table) {
+    if (sizeOfRow < row.size()) sizeOfRow = row.size();
+  }
+
+  for (std::vector<std::string> &row : table) {
+    size_t tmp{ row.size() };
+
     if (sizeOfRow > tmp) {
       for (size_t i{}; i < (sizeOfRow - tmp); i++) {
-        row.push_back("");
+        row.push_back(" ");
       }
     }
   }
