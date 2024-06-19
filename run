@@ -24,7 +24,7 @@ if [[ "$1" != "" && -d "$1" ]]; then
       fi
     done
   done
-  if [[ "${#distro[@]}" != 0 ]]; then
+  if [[ "${#dir_array[@]}" != 0 ]]; then
     ${SCRIPT_DIR}build/Database ${dir_array[@]}
   else
     create_base_table()
@@ -60,7 +60,7 @@ else
       fi
     done
   done
-  if [[ "${#distro[@]}" != 0 ]]; then
+  if [[ "${#filename[@]}" != 0 ]]; then
     ${SCRIPT_DIR}build/Database ${filename[@]}
   else
     create_base_table()
