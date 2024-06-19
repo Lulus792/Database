@@ -10,6 +10,11 @@ cmake --build ${SCRIPT_DIR}build/
 
 dir=$SCRIPT_DIR*
 
+create_base_table() {
+  mkdir ${SCRIPT_DIR}database
+  touch ${SCRIPT_DIR}database/data.db
+}
+
 if [[ "$1" != "" && -d "$1" ]]; then
   declare -a dir_array
   for folder in $@; do
@@ -19,7 +24,11 @@ if [[ "$1" != "" && -d "$1" ]]; then
       fi
     done
   done
-  ${SCRIPT_DIR}build/Database ${dir_array[@]}
+  if [[ "${#distro[@]}" != 0 ]]; then
+    ${SCRIPT_DIR}build/Database ${dir_array[@]}
+  else
+    create_base_table()
+  fi
 else
   declare -a dir_array
   for f in $dir; do
@@ -51,7 +60,11 @@ else
       fi
     done
   done
-  ${SCRIPT_DIR}build/Database ${filename[@]}
+  if [[ "${#distro[@]}" != 0 ]]; then
+    ${SCRIPT_DIR}build/Database ${filename[@]}
+  else
+    create_base_table()
+  fi
 fi
 
 
